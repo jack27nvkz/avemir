@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex: 0 0 7%;
+    padding: 5px 0;
+    border-bottom: wheat 1px solid;
+}
+
+.profile {
+    margin-left: 10px;
+    height: 50px;
+    width: 50px;
+    background-color: wheat;
+    border-radius: 35px;
+}
+
+.profile:hover {
+    background-color: #e4952e;
+}
+
+.title {
+    height: 100%;
+    flex: 1;
+}
+
+.settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 70px;
+}
+
+.settings:hover {
+    background-color: #292929;
+    cursor: pointer;
+}   

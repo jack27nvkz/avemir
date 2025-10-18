@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.button_add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    width: 80%;
+    background-color: #1b1b1f;
+    color: wheat;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #292929;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.button_add:hover {
+    background-color: #292929;
+    cursor: pointer;
+}
+
+.no_data {
+    margin: 25px auto;
+    color: wheat;
+    font-size: 25px;
+    font-weight: bold;
+}

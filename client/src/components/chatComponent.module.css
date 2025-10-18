@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 75px;
+    background-color: #1b1b1f;
+}
+
+.container:hover {
+    background-color: #292929;
+    cursor: pointer;
+}
+
+.avatar {
+    margin: 10px;
+    height: 55px;
+    width: 55px;
+    border-radius: 50px;
+    background-color: wheat;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px;
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    height: 65px;
+    width: 65px;
+    color: wheat;
+}
+
+.name {
+    margin: 2px 10px;
+    flex: 20%;
+    font-size: 18px;
+    font-weight: bold;
+    color: wheat;;
+}
+
+.last_massage {
+    margin: 2px 10px;
+    flex: 80%;
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: wheat;;
+}

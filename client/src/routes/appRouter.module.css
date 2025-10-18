@@ -1,0 +1,12 @@
+
+.activation_view {
+    display: flex;
+    width: 300px;
+    height: 100vh;
+    text-align: center;
+}
+
+.activation_view > h2 {
+    margin: auto;
+    color: wheat;
+}

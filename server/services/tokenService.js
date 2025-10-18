@@ -3,12 +3,26 @@ const tokenModel = require( "../models/models" ).Token;
 
 class TokenService {
     generateTokens( payload ){
-        const accessToken = jwt.sign( payload, process.env.JWT_ACCESS_SECRET, { expiresIn: "30m" });
-        const refreshToken = jwt.sign( payload, process.env.JWT_REFRESH_SECRET, { expiresIn: "30d" });
+        try{
+            const accessToken = jwt.sign( payload, process.env.JWT_ACCESS_SECRET, { expiresIn: "30m" });
+            const refreshToken = jwt.sign( payload, process.env.JWT_REFRESH_SECRET, { expiresIn: "30d" });
+        
+            return {
+                accessToken,
+                refreshToken
+            };
+        } catch ( error ) {
+            throw error;
+        }
+    }
 
-        return {
-            accessToken,
-            refreshToken
+    generateActivationToken( payload ){
+        try{
+            const activationToken = jwt.sign( payload, process.env.JWT_ACTIVATION_SECRET, { expiresIn: "5m" });
+
+            return { activationToken };
+        } catch( error ){
+            throw error;
         }
     }
 

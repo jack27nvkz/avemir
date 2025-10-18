@@ -1,0 +1,75 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.status {
+    margin: 50px auto 10px auto;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.input_container {
+    display: flex;
+    padding: 0 50px;
+    flex-direction: row;
+    height: 350px;
+}
+
+.input {
+    margin: auto;
+    font-size: 30px;
+    height: 25px;
+    width: 100px;
+    border-radius: 10px;
+    border: 1px solid wheat;
+    background-color: #1b1b1f;
+    color: wheat;
+    text-align: center;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.input webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.text {
+    margin: auto 15px;
+    color: wheat;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.button { 
+    margin: 10px auto;
+    width: 50%;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    background-color: wheat;
+}
+
+.button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.button:disabled:hover {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.button:hover {
+    background-color: #e4952e;
+}

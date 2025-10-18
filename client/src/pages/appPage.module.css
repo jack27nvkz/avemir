@@ -1,0 +1,38 @@
+.container {
+    height: 100%;
+    width: 400px;
+    background-color: #1b1b1f;
+    padding-bottom: env( safe-area-inset-bottom, 16px );
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #1b1b1f;
+}
+
+.main:nth-child( 2 ) {
+    height: 100%;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.group{}
+
+.contact{}
+
+.settings{}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}

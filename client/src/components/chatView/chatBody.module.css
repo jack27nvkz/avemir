@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #1b1b1f;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    margin-bottom: 10px;
+
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    background-color: #2a2a2e;
+    border-radius: 8px;
+    max-width: 60%;
+    color: wheat;
+}
+
+.time {
+    align-self: flex-end;
+    font-size: 12px;
+    color: gray;
+    margin-top: 5px;
+}
+
+.empty_body {
+    color: gray;
+    align-self: center;
+    margin-top: 20px;
+}

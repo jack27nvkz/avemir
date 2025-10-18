@@ -3,7 +3,6 @@ const bcrypt = require( "bcrypt" );
 const uuid = require( "uuid" );
 const mailService = require( "./mailService" );
 const tokenService = require( "./tokenService" );
-const contactService = require( "./contactService" );
 const UserDto = require( "../dtos/userDto" );
 const ApiError = require( "../exceptions/apiError" );
 
@@ -58,11 +57,13 @@ class UserService{
 
         user.isActivated = true;
         await user.save();
+
+        return new UserDto( user );
     }
 
     async login( email, password ){
         const user = await userModel.findOne({ where: { email } });
-        
+
         if( !user ){
             throw ApiError.badRequest( `Пользователя с почтой ${ email } не существует` );
         }
@@ -74,12 +75,17 @@ class UserService{
         }
 
         const userDto = new UserDto( user );
+
+        if( !userDto.isActivated )
+            throw ApiError.accessError( "Необходимо активировать аккаунт" );
+
         const tokens = tokenService.generateTokens({ ...userDto });
 
         await tokenService.saveToken( userDto.id, tokens.refreshToken );
 
         return { ...tokens, user: userDto };
     }
+
 
     async logout( refreshToken ){
         const deletedCount = await tokenService.removeToken( refreshToken );
@@ -88,14 +94,14 @@ class UserService{
 
     async refresh( refreshToken ){
         if( !refreshToken ){
-            throw new ApiError.unauthorizedError();
+            throw ApiError.unauthorizedError();
         }
 
         const userData = tokenService.validateRefreshToken( refreshToken );
         const tokenData = await tokenService.findToken( refreshToken );
 
         if( !userData || !tokenData ){
-            throw new ApiError.unauthorizedError();
+            throw ApiError.unauthorizedError();
         }
         
         const user = await userModel.findOne({ where: { id: userData.id }});

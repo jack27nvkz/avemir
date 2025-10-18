@@ -16,7 +16,7 @@ const User = sequelize.define( "user", {
 
 const Token = sequelize.define( "token", {
     userId: { type: DataTypes.INTEGER, allowNull: false, references: { model: "users", key: "id" }, onDelete: "CASCADE" },
-    refreshToken: { type: DataTypes.STRING, allowNull: false }
+    refreshToken: { type: DataTypes.TEXT, allowNull: false }
 },{
     tableName: "tokens",
     timestamps: true

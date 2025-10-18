@@ -8,7 +8,7 @@ router.use( authMiddleware );
 router.use( accessRoomMiddleware );
 
 router.post( "/", messageController.sendMessage );
-router.get( "/", messageController.getMessages );
+router.get( "/:roomId", messageController.getMessages );
 router.delete( "/:id", messageController.deleteMessage );
 
 module.exports = router;

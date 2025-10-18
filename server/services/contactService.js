@@ -6,7 +6,7 @@ class ContactService{
     async addContact( inviteCode, userId ){
         const candidate = await userModel.findOne({ where: { inviteCode } });
         if( !candidate ){
-            throw ApiError.badRequest( 404, `Пользователя с таким кодом не существует` );
+            throw ApiError.badRequest( `Пользователя с таким кодом не существует`, 404 );
         }
     
         const contactUserId = candidate.id;
@@ -21,7 +21,7 @@ class ContactService{
         }});
 
         if( existing ){
-            throw ApiError.badRequest(`Контакт уже добавлен` );
+            throw ApiError.badRequest( `Контакт уже добавлен` );
         }
 
         const contact = await contactModel.create({

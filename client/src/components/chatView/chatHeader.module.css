@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0;
+    width: 100%;
+    flex: 0 0 7%;
+    background-color: #1b1b1f;
+    border-bottom: wheat 1px solid;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.button:hover {
+    background-color: #292929;
+    cursor: pointer;
+}
+
+#arrow {
+    flex: 0 0 10%;
+}
+
+.user_avatar {
+    height: 50px;
+    width: 50px;
+    background-color: wheat;
+    border-radius: 35px;
+}
+
+.user_data {
+    display: flex;
+    height: 100%;
+    flex: 0 0 35%;
+    justify-content: center;
+    align-items: center;
+    color: wheat;
+}
+
+#videocall {
+    flex: 0 0 15%;
+}
+
+#audiocall {
+    flex: 0 0 15%;
+}
+
+#options {
+    flex: 0 0 10%;
+}

@@ -19,7 +19,7 @@ class MessageController{
 
     async getMessages( req, res, next ){
         try {
-            const roomId = req.roomId;
+            const roomId = req.params.roomId;
             const messages = await messageService.getMessages( roomId, +req.query.limit, +req.query.offset );
 
             return res.json( messages );
